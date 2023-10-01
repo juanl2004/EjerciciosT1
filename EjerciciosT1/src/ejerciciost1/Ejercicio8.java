@@ -6,30 +6,53 @@ public class Ejercicio8 {
 
 	public static void main(String[] args) {
 		
-		 final double costeEntradasInf = 15.50;
-		 final int costeEntradasAdt = 20;
-		 
-		 int numEntradasInf;
-		 int numEntradasAdt;
-		 
-		 double importeTotal;
-		 double importeDescuento;
-		 
-		 Scanner sc = new Scanner(System.in);
-		 
-		 System.out.println("¿Cuantas entradas infantiles?: ");
-		 numEntradasInf = sc.nextInt();
-		 
-		 System.out.println("¿Cuantas entradas de adultos?: ");
-		 numEntradasAdt = sc.nextInt();
-		 
-		 importeTotal = (double) (costeEntradasInf * numEntradasInf) + (costeEntradasAdt * numEntradasAdt);
-		 importeDescuento = importeTotal - (importeTotal*5)/100;
-		 importeTotal = importeTotal>=100 ? importeDescuento : importeTotal;
+		//Declaramos esta constante como double porque el valor es decimal.
+		final double costeEntradasInf = 15.50;
 		
-		 System.out.println("" + importeTotal);
+		//Declaramos la constante como int porque el valor es un número entero.
+		final int costeEntradasAdt = 20;
 		 
-		 sc.close();
+		//Declaramos la variable como int porque el valor es un número entero.
+		int numEntradasInf;
+		
+		//Declaramos la variable como int porque el valor es un número entero.
+		int numEntradasAdt;
+		
+		//Declaramos la variable como double porque el valor es un número decimal.
+		double importeTotal;
+		
+		//Declaramos la variable como double porque el valor es un número decimal.
+		double importeDescuento;
+		 
+		//Creamos el Scanner.
+		Scanner sc = new Scanner(System.in);
+		
+		//Le pedimos al usuario el número de entradas infantiles.
+		System.out.println("¿Cuantas entradas infantiles?: ");
+		
+		//Leemos el número del teclado.
+		numEntradasInf = sc.nextInt();
+		
+		//Le pedimos al usuario el número de estradas adultas.
+		System.out.println("¿Cuantas entradas de adultos?: ");
+		
+		//Leemos el número del teclado.
+		numEntradasAdt = sc.nextInt();
+		
+		//Calculamos la suma total de entradas.
+		importeTotal = (double) (costeEntradasInf * numEntradasInf) + (costeEntradasAdt * numEntradasAdt);
+		
+		//Calculamos el descuento.
+		importeDescuento = importeTotal - (importeTotal*5)/100;
+		
+		//Utilizamos el ternario para identificar cuando hacer el descuento.
+		importeTotal = importeTotal>=100 ? importeDescuento : importeTotal;
+		
+		//Mostramos la solución.
+		System.out.println("" + importeTotal);
+		
+		//Cierre.
+		sc.close();
 	}
 
 }
